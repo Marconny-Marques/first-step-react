@@ -1,8 +1,9 @@
+import Login from "./componentes/state/Login.jsx";
+
 function App() {
   return (
     <>
-      {' '}
-      <h1>IFB</h1>
+      <Login />
     </>
   );
 }
