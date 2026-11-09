@@ -1,4 +1,5 @@
-import React, { useState } from 'react';
+import "./InputPassword.css";
+import React, { useState } from "react";
 
 export default function InputPassword({ placeholder }) {
 

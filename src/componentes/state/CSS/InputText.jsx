@@ -1,4 +1,5 @@
-import React, { useState } from 'react';
+import "./InputText.css";
+import React, { useState } from "react";
 
 export default function InputText({ placeholder }) {
 
@@ -10,8 +11,6 @@ export default function InputText({ placeholder }) {
     const novoValor = e.target.value;
 
     setValor(novoValor);
-
-    // verifica se está vazio
     setErro(novoValor.trim() === "");
   }
 

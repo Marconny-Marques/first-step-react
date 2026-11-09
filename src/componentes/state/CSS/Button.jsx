@@ -1,4 +1,5 @@
-import React, { useState } from 'react';
+import "./Button.css";
+import React, { useState } from "react";
 
 export default function Button({ valor }) {
 
@@ -9,7 +10,7 @@ export default function Button({ valor }) {
   }
 
   return (
-    <button onClick={handleClick}>
+    <button className="btn" onClick={handleClick}>
       {texto}
     </button>
   );
