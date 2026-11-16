@@ -1,24 +1,30 @@
-import "./InputPassword.css";
 import React, { useState } from "react";
+import { Input, Typography } from "antd";
+
+const { Text } = Typography;
 
 export default function InputPassword({ placeholder }) {
 
   const [senha, setSenha] = useState("");
 
-  function handleChange(e) {
-    setSenha(e.target.value);
-  }
-
   return (
-    <>
-      <input
-        type="password"
+    <div>
+
+      <Input.Password
         placeholder={placeholder}
         value={senha}
-        onChange={handleChange}
+        onChange={(e) => setSenha(e.target.value)}
+        size="large"
       />
 
-      {(senha !== "") && <p>Senha digitada: {senha}</p>}
-    </>
+      {/*
+      Exemplo alternativo de feedback:
+
+      <Text type="secondary" italic>
+        Senha digitada: {senha}
+      </Text>
+      */}
+
+    </div>
   );
 }

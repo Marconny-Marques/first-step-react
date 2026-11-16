@@ -1,29 +1,40 @@
-import "./InputText.css";
 import React, { useState } from "react";
+import { Input, Alert } from "antd";
 
 export default function InputText({ placeholder }) {
 
   const [valor, setValor] = useState("");
   const [erro, setErro] = useState(false);
 
-  function handleChange(e) {
+  const handleChange = (e) => {
 
     const novoValor = e.target.value;
 
     setValor(novoValor);
+
     setErro(novoValor.trim() === "");
-  }
+  };
 
   return (
-    <>
-      <input
-        type="text"
+    <div>
+
+      <Input
         placeholder={placeholder}
         value={valor}
         onChange={handleChange}
+        size="large"
+        status={erro ? "error" : ""}
       />
 
-      {erro && <p>⚠️ O campo não pode ficar vazio.</p>}
-    </>
+      {erro && (
+        <Alert
+          message="O campo não pode ficar vazio."
+          type="error"
+          showIcon
+          style={{ marginTop: 8 }}
+        />
+      )}
+
+    </div>
   );
 }

@@ -1,17 +1,31 @@
-import "./Button.css";
 import React, { useState } from "react";
+
+import {
+  Button as AntButton,
+  message
+} from "antd";
 
 export default function Button({ valor }) {
 
   const [texto, setTexto] = useState(valor);
 
-  function handleClick() {
+  const handleClick = () => {
+
     setTexto("Você clicou!");
-  }
+
+    message.success(
+      "Botão clicado com sucesso!"
+    );
+  };
 
   return (
-    <button className="btn" onClick={handleClick}>
+    <AntButton
+      type="primary"
+      block
+      size="large"
+      onClick={handleClick}
+    >
       {texto}
-    </button>
+    </AntButton>
   );
 }

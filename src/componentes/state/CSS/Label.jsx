@@ -1,13 +1,19 @@
-import "./Label.css";
-import React, { useState } from "react";
+import React from "react";
+import { Typography } from "antd";
+
+const { Text } = Typography;
 
 export default function Label({ texto }) {
 
-  const [valor, setValor] = useState(texto);
-
   return (
-    <label className="label">
-      {valor}
-    </label>
+    <Text
+      strong
+      style={{
+        fontSize: 16,
+        color: "#333"
+      }}
+    >
+      {texto}
+    </Text>
   );
 }
